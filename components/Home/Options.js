@@ -4,8 +4,10 @@ import { Icon, useTheme } from '@ui-kitten/components';
 
 const Options = (props) => {
     const theme = useTheme();
+    const { style } = props;
+    
     return (
-        <View style={[props.style]}>
+        <View style={[style]}>
             <View
                 style={{
                     backgroundColor: theme['background-basic-color-1'],

@@ -18,24 +18,24 @@ class AddressAutocomplete extends Component {
     }
 
     render() {
-        const { navigation } = this.props;
-        const styles = this.props.eva.style;
+        const { navigation, selectAddress: SelectAddress, addCachedAddress: AddCachedAddress, eva } = this.props;
+        const styles = eva.style;
         return (
             <View style={styles.container}>
                 <GooglePlacesAutocomplete
                     enablePoweredByContainer={false}
-                    fetchDetails={true}
+                    fetchDetails
                     placeholder="Search"
                     onPress={(data, details) => {
                         // 'details' is provided when fetchDetails = true
                         // this.props.selectedAddress(details);
-                        this.props.selectAddress({
+                        SelectAddress({
                             main_text: data.structured_formatting.main_text,
                             secondary_text:
                                 data.structured_formatting.secondary_text,
                             location: details.geometry.location,
                         });
-                        this.props.addCachedAddress({
+                        AddCachedAddress({
                             main_text: data.structured_formatting.main_text,
                             secondary_text:
                                 data.structured_formatting.secondary_text,
