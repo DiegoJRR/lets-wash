@@ -47,7 +47,7 @@ class AddressAutocomplete extends Component {
                     }}
                     onFail={(error) => console.error(error)}
                     query={{
-                        key: 'AIzaSyDJPgVOJpvE88T6SrZAGOro3MuKxuwNrqs',
+                        key: process.env.GOOGLE_API_KEY,
                         language: 'es',
                         components: 'country:mx',
                     }}
