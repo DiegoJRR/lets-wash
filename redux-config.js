@@ -1,8 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { persistStore, persistReducer } from 'redux-persist';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
-import { appStateReducer } from './redux/reducer';
 import { createStore } from 'redux';
+import appStateReducer from './redux/reducer';
 
 const persistConfig = {
     key: 'root',

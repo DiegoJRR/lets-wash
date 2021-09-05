@@ -71,12 +71,12 @@ const appStateReducer = function (state = initialState, action) {
                 vehicles: [...state.vehicles, action.newVehicle],
             };
         case 'addService': {
-            let copy = [...state.services];
+            const copy = [...state.services];
             const prevIndex = copy.findIndex(
                 (service) =>
-                    service.vehicle.ref == action.newService.vehicle.ref
+                    service.vehicle.ref = action.newService.vehicle.ref
             );
-            if (prevIndex != -1) {
+            if (prevIndex !== -1) {
                 copy[prevIndex] = {
                     ...action.newService,
                     active: true,
@@ -97,13 +97,13 @@ const appStateReducer = function (state = initialState, action) {
                 ...state,
                 services: [],
             };
-        case 'removeService': //TODO: cambiar eliminacion por ref en lugar de index
-            let copy = [...state.services];
+        case 'removeService': // TODO: cambiar eliminacion por ref en lugar de index
+            const copy = [...state.services];
             const prevIndex = copy.findIndex(
-                (service) => service.vehicle.ref == action.vehicleRef
+                (service) => service.vehicle.ref === action.vehicleRef
             );
 
-            if (prevIndex != -1) {
+            if (prevIndex !== -1) {
                 copy[prevIndex].active = false;
             }
             
@@ -111,8 +111,8 @@ const appStateReducer = function (state = initialState, action) {
         case 'addAddress': {
             let repeatedLocations = state.userAddresses.filter(
                 (add) =>
-                    add.location.lat == action.address.location.lat &&
-                    add.location.lng == action.address.location.lng
+                    add.location.lat === action.address.location.lat &&
+                    add.location.lng === action.address.location.lng
             );
             if (repeatedLocations.length > 0) return state;
             return {
@@ -123,8 +123,8 @@ const appStateReducer = function (state = initialState, action) {
         case 'addCachedAddress': {
             let repeatedLocations = state.cachedAddresses.filter(
                 (add) =>
-                    add.location.lat == action.address.location.lat &&
-                    add.location.lng == action.address.location.lng
+                    add.location.lat === action.address.location.lat &&
+                    add.location.lng === action.address.location.lng
             );
             if (repeatedLocations.length > 0) return state;
             return {
@@ -161,7 +161,7 @@ const appStateReducer = function (state = initialState, action) {
             const { employees } = action;
             const newEmployeeList = [...state.employees];
             for (employee of employees) {
-                if (!state.employees.find((e) => e.ref == employee.ref)) {
+                if (!state.employees.find((e) => e.ref === employee.ref)) {
                     newEmployeeList.push(employee);
                 }
             }
@@ -173,9 +173,9 @@ const appStateReducer = function (state = initialState, action) {
         case 'populateEmployee':
             const { employee } = action;
             const employees = [...state.employees];
-            if (employee.filter((e) => e.ref == employee.ref) == 1) {
+            if (employee.filter((e) => e.ref === employee.ref) === 1) {
                 employees.map((e) =>
-                    e.ref == employee.ref
+                    e.ref === employee.ref
                         ? { ...employee, lastUpdated: Date.now() }
                         : e
                 );
