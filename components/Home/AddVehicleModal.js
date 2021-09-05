@@ -61,7 +61,7 @@ function AddVehicleModal(props) {
     const [adding, setAdding] = useState(false);
 
     const AddCar = () => {
-        if (alias != '' && model != '' && brand != '' && type) {
+        if (alias !== '' && model !== '' && brand !== '' && type) {
             setAdding(true);
 
             functions()
@@ -168,11 +168,11 @@ function AddVehicleModal(props) {
                                                 borderRadius: 50,
                                                 marginHorizontal: 3,
                                                 borderWidth:
-                                                    idx == selectedColor
+                                                    idx === selectedColor
                                                         ? 2
                                                         : 0,
                                             }}
-                                        ></View>
+                                        />
                                     </Pressable>
                                 ))}
                             </ScrollView>

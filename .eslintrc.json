@@ -22,6 +22,9 @@
     "rules": {
         "no-console": ["error", { "allow": ["warn", "error"] }],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "react/prop-types": "warn"
+        "react/prop-types": "warn",
+        "no-use-before-define": "off",
+        "no-plusplus": "off",
+        "react/jsx-props-no-spreading": "off"
     }
 }

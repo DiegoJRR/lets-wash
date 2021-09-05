@@ -69,7 +69,7 @@ const Application = () => {
       await functions()
         .httpsCallable("getServices")()
         .then((res) => {
-          if (res?.data?.code == 200) {
+          if (res?.data?.code === 200) {
             dispatch(setServiceTypes(res.data.message));
           }
         })
@@ -80,7 +80,7 @@ const Application = () => {
       await functions()
         .httpsCallable("getVehicleTypes")()
         .then((res) => {
-          if (res?.data?.code == 200) {
+          if (res?.data?.code === 200) {
             dispatch(setVehicleTypes(res.data.message));
           }
         })
@@ -91,7 +91,7 @@ const Application = () => {
       await functions()
         .httpsCallable("getPendingReview")()
         .then((res) => {
-          if (res?.data?.code == 200) {
+          if (res?.data?.code === 200) {
             dispatch(setPendingReview(res.data.message));
           }
         })
@@ -104,7 +104,7 @@ const Application = () => {
       await functions()
         .httpsCallable("getUserData")()
         .then(async (res) => {
-          if (res?.data?.code == 200 && res.data.message) {
+          if (res?.data?.code === 200 && res.data.message) {
             const url = await storage()
               .refFromURL(res.data.message.profilePicture)
               .getDownloadURL();
@@ -123,10 +123,10 @@ const Application = () => {
             // TODO: Revisar si el codigo no es 200 cuando el usuario no existe
             auth()
               .signOut()
-              .then((_) => {
+              .then(() => {
                 dispatch(signOut()); // TODO: validar tambien en otras requests
               })
-              .catch((_) => {
+              .catch(() => {
                 // No signed in
               });
           }
@@ -141,7 +141,7 @@ const Application = () => {
           if (res?.data?.message) dispatch(setVehicles(res?.data?.message));
         })
         .catch((err) => {
-          console.err(err);
+          console.error(err);
         });
 
       const requestSubscriber = firestore()
@@ -169,17 +169,17 @@ const Application = () => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return () => {
       subscriber(); // unsubscribe on unmount
-      for (const sub of subscribers) {
+      subscribers.forEach((sub) => {
         sub();
-      }
+      })
     };
   }, []);
 
   useEffect(() => {
     if (!isSignedIn) {
-      for (const sub of subscribers) {
+      subscribers.forEach((sub) => {
         sub();
-      }
+      })
     }
   }, [isSignedIn]);
 
@@ -215,7 +215,7 @@ const Application = () => {
   );
 };
 
-export default (props) => (
+export default () => (
   <>
     <IconRegistry icons={EvaIconsPack} />
     <Provider store={store}>

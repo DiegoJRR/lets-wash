@@ -50,7 +50,7 @@ function AddCarPopUp(props) {
     const [adding, setAdding] = useState(false);
 
     const AddCar = () => {
-        if (alias != '' && model != '' && brand != '' && type) {
+        if (alias !== '' && model !== '' && brand !== '' && type) {
             setAdding(true);
 
             functions()
@@ -115,13 +115,13 @@ function AddCarPopUp(props) {
                     color: theme['background-alternative-color-1'],
                     textAlign: 'justify',
                 }}
-            ></Icon>
+             />
         </View>
     );
 
     return (
         <Card
-            disabled={true}
+            disabled
             header={Header}
             style={{
                 borderRadius: 20,
@@ -137,10 +137,10 @@ function AddCarPopUp(props) {
                     color: colors[selectedColor],
                     textAlign: 'center',
                 }}
-            ></Icon>
+            />
             <View style={{ ...styles.scrollArea }}>
                 <ScrollView
-                    horizontal={true}
+                    horizontal
                     contentContainerStyle={
                         styles.scrollArea_contentContainerStyle
                     }
@@ -161,9 +161,9 @@ function AddCarPopUp(props) {
                                         theme['border-alternative-color-3'],
                                     borderRadius: 50,
                                     marginHorizontal: 3,
-                                    borderWidth: idx == selectedColor ? 2 : 0,
+                                    borderWidth: idx === selectedColor ? 2 : 0,
                                 }}
-                            ></View>
+                             />
                         </Pressable>
                     ))}
                 </ScrollView>
@@ -214,7 +214,7 @@ function AddCarPopUp(props) {
                 disabled={adding}
                 accessoryLeft={() => {
                     if (adding) return <Spinner />;
-                    else return null;
+                    return null;
                 }}
             >
                 {adding ? null : 'Añadir'}

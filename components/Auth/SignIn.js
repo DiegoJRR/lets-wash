@@ -45,7 +45,7 @@ const SignIn = (props) => {
     const validateFields = () => {
         let missing = false;
 
-        if (validateEmail(email) == false) {
+        if (validateEmail(email) === false) {
             missing = true;
             addMissingField('email');
         }
@@ -111,7 +111,7 @@ const SignIn = (props) => {
                 'createUserWithProvider'
             )(createUserPayload);
 
-            if (response.data.code == 200 || response.data.code == 202) {
+            if (response.data.code === 200 || response.data.code === 202) {
                 props.signIn(userCredential.user);
             } else {
                 console.warn(response.data);

@@ -17,12 +17,12 @@ function Estrellas(props) {
             }}
         >
             <Text style={{ marginRight: 5, fontSize: 16 }}>
-                {props.rate == 0 ? "N/A" : props.rate.toFixed(2)}
+                {props.rate === 0 ? "N/A" : props.rate.toFixed(2)}
             </Text>
             <Icon
                 name="star"
                 style={{ width: 15, height: 15, marginRight: 4 }}
-                fill={'#FFC94D'}
+                fill="#FFC94D"
             />
         </Row>
     );

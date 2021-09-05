@@ -1,13 +1,8 @@
 import React from 'react';
 import {
-    StyleSheet,
     View,
-    ScrollView,
-    Pressable,
-    Animated,
-    Easing,
 } from 'react-native';
-import { Button, Text, Spinner, Layout, useTheme } from '@ui-kitten/components';
+import { Text, Layout, useTheme } from '@ui-kitten/components';
 
 export function currencyFormat(num) {
     return '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
@@ -91,7 +86,7 @@ export const DataItem = (props) => (
 );
 
 export const VehicleServiceRow = (props) => {
-    const { vehicleType, brand, model, color, serviceType } = props;
+    const { vehicleType, brand, color, serviceType } = props;
     return (
         <Row style={{ alignItems: 'flex-start' }}>
             <View style={{ flex: 1 }}>
@@ -100,7 +95,7 @@ export const VehicleServiceRow = (props) => {
             <View style={{ flex: 1 }}>
                 <DataItem
                     label="Vehículo"
-                    textComponent={(props) => (
+                    textComponent={() => (
                         <View>
                             <Row>
                                 <Text appearance="hint" style={{marginRight: 10}}>Tipo</Text>

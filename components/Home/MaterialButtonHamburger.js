@@ -21,17 +21,17 @@ function MaterialButtonHamburger(props) {
                         transform: [{ translateX: 12 }, { translateY: -15 }],
                     },
                 ]}
-            ></Icon>
+             />
 
             <FontAwesomeIcon
-                name={'car'}
+                name="car"
                 style={[
                     styles.caption,
                     {
                         transform: [{ translateX: -2 }],
                     },
                 ]}
-            ></FontAwesomeIcon>
+             />
         </TouchableOpacity>
     );
 }

@@ -42,8 +42,7 @@ const FormGroup = (props) => {
                     }
                     accessoryRight={
                         field.secretField
-                            ? (props) => {
-                                  return (
+                            ? (props) => (
                                       <TouchableWithoutFeedback
                                           onPress={() => {
                                               const entries = [
@@ -62,8 +61,7 @@ const FormGroup = (props) => {
                                               }
                                           />
                                       </TouchableWithoutFeedback>
-                                  );
-                              }
+                                  )
                             : null
                     }
                     // accessoryLeft={field.accessoryLeft ?? null}

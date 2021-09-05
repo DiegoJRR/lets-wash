@@ -15,7 +15,7 @@ const fillProfilePicutreUri = async (employee) => {
     };
 };
 
-export const fillRequests = async (snapshot) => {
+const fillRequests = async (snapshot) => {
     const filtered = snapshot.docs.filter(
         (doc) => doc.data().payment.status == 'approved' && doc.data().washer
     );
@@ -27,8 +27,8 @@ export const fillRequests = async (snapshot) => {
 
     const populatedRequests = [];
 
-    for (let request of requests) {
-        const employeeSnapshot = await firestore() //TODO: Cache de empleados
+    for (const request of requests) {
+        const employeeSnapshot = await firestore() // TODO: Cache de empleados
             .collection('washers')
             .doc(request.washer)
             .get()
@@ -48,7 +48,7 @@ export const fillRequests = async (snapshot) => {
         const servicesData = servicesSnapshot.docs;
         const populatedServicesData = [];
 
-        for (let service of servicesData) {
+        for (const service of servicesData) {
             const serviceData = service.data();
 
             populatedServicesData.push({
@@ -66,3 +66,5 @@ export const fillRequests = async (snapshot) => {
 
     return populatedRequests;
 };
+
+export default fillRequests;

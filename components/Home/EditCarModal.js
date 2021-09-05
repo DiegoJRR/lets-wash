@@ -60,14 +60,14 @@ function EditCarModal(props) {
     const [uploading, setUploading] = useState(false);
     const [selectedColor, setSelectedColor] = useState(
         max(
-            colors.findIndex((color) => color == vehicle.color),
+            colors.findIndex((color) => color === vehicle.color),
             0
         )
     );
     const [type, setType] = useState(
         vehicle.type
             ? new IndexPath(
-                  vehicleTypes.findIndex((vt) => vt.ref == vehicle.type)
+                  vehicleTypes.findIndex((vt) => vt.ref === vehicle.type)
               )
             : new IndexPath(0)
     );
@@ -81,9 +81,9 @@ function EditCarModal(props) {
 
             if (!(request === undefined)) {
                 if (
-                    request.cancelled == false &&
-                    request.fulfilled == false &&
-                    (request.paid || request.payment.type == 'cash')
+                    request.cancelled === false &&
+                    request.fulfilled === false &&
+                    (request.paid || request.payment.type === 'cash')
                 ) {
                     for (
                         let serviceIndex = 0;
@@ -92,7 +92,7 @@ function EditCarModal(props) {
                     ) {
                         const service = request.services[serviceIndex];
 
-                        if (service.vehicle == vehicle.ref) {
+                        if (service.vehicle === vehicle.ref) {
                             inUse = true;
                         }
                     }
@@ -123,9 +123,9 @@ function EditCarModal(props) {
                     vehicleRef: vehicle.ref,
                 })
                 .then((res) => {
-                    if (res.data.code == 200) {
+                    if (res.data.code === 200) {
                         var newVehicleList = vehicles.map((v) =>
-                            v.ref == vehicle.ref ? { ...v, disabled: true } : v
+                            v.ref === vehicle.ref ? { ...v, disabled: true } : v
                         );
 
                         updateVehicles(newVehicleList);
@@ -187,7 +187,7 @@ function EditCarModal(props) {
             .then((res) => {
                 var newVehicleList = new Array();
                 for (let index = 0; index < vehicles.length; index++) {
-                    if (vehicles[index].ref != vehicle.ref) {
+                    if (vehicles[index].ref !== vehicle.ref) {
                         newVehicleList.push(vehicles[index]);
                     } else {
                         newVehicleList.push({
@@ -285,7 +285,7 @@ function EditCarModal(props) {
                                                 borderRadius: 50,
                                                 marginHorizontal: 3,
                                                 borderWidth:
-                                                    idx == selectedColor
+                                                    idx === selectedColor
                                                         ? 2
                                                         : 0,
                                             }}

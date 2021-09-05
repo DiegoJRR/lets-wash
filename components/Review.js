@@ -12,7 +12,7 @@ function Review({ rating, comment }) {
 
     return (
         <Card
-            disabled={true}
+            disabled
             style={{
                 borderRadius: 20,
                 marginBottom: 10,
@@ -36,7 +36,7 @@ function Review({ rating, comment }) {
                                 ...styles.icon,
                                 color: star ? '#FFC94D' : 'rgba(155,155,155,1)',
                             }}
-                        ></FontAwesomeIcon>
+                         />
                     ))}
                 </View>
             </View>

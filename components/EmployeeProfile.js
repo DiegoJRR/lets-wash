@@ -44,7 +44,7 @@ function EmployeeReviews(props) {
     const { serviceTypes } = props;
 
     const getReviews = async () => {
-        const reviewSnapshot = await firestore() //TODO: persistir
+        const reviewSnapshot = await firestore() // TODO: persistir
             .collection('washers')
             .doc(ref)
             .collection('reviews')
@@ -118,7 +118,7 @@ function EmployeeReviews(props) {
                             <ServicesScrollable
                                 data={employeeServices.map((service) => {
                                     const serviceMatch = serviceTypes.find(
-                                        (s) => s.ref == service
+                                        (s) => s.ref === service
                                     );
 
                                     return {

@@ -54,16 +54,21 @@ function AddReviewPopUp(props) {
     const requestData = useMemo(
         () => userRequests.find((req) => req.ref == pendingReview.request),
         [pendingReview, userRequests]
-    );
-    const { employeeData } = requestData;
-    const date = useMemo(() => moment(requestData.endTime.toMillis()), [
-        requestData,
-    ]);
+        );
+        const { employeeData } = requestData;
+        const date = useMemo(() => moment(requestData.endTime.toMillis()), [
+            requestData,
+        ]);
+        
+        if (!employeeData) return <Spinner />;
+        
+        const dismiss = () => {
+            onClose();
+            dispatch(setPendingReview(null));
+        };
 
-    if (!employeeData) return <Spinner />;
-
-    const submit = (dismissed = false) => {
-        setAdding(true);
+        const submit = (dismissed = false) => {
+            setAdding(true);
 
         // Nota: rating real es rating + 1
         functions()
@@ -95,14 +100,10 @@ function AddReviewPopUp(props) {
             });
     };
 
-    const dismiss = () => {
-        onClose();
-        dispatch(setPendingReview(null));
-    };
 
     return (
         <Card
-            disabled={true}
+            disabled
             style={{
                 borderRadius: 20,
                 borderColor: theme['color-primary-default-border'],
@@ -118,7 +119,7 @@ function AddReviewPopUp(props) {
             <View style={{ paddingVertical: 15 }}>
                 <Row style={{ paddingVertical: 10 }}>
                     <DataItem
-                        label={'Fecha'}
+                        label="Fecha"
                         text={date.format('DD / MM / YYYY hh:mm')}
                     />
                     <DataItem
@@ -133,7 +134,7 @@ function AddReviewPopUp(props) {
                 />
                 <Input
                     disabled={adding}
-                    multiline={true}
+                    multiline
                     textStyle={{
                         minHeight: 128,
                         textAlignVertical: 'top',

@@ -113,7 +113,7 @@ const CustomDrawerContent = (props) => {
                                 borderWidth: theme == userTheme ? 0 : 5,
                                 borderColor: 'transparent',
                             }}
-                        ></Pressable>
+                        />
                     ))}
                 </View>
                 <Button
