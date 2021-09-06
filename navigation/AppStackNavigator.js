@@ -16,7 +16,7 @@ import AddVehicleModal from '../components/Home/AddVehicleModal';
 const HomeModalStack = createStackNavigator();
 
 const HomeModalNavigator = (props) => (
-    <HomeModalStack.Navigator mode="modal" headerMode="none">
+    <HomeModalStack.Navigator mode="modal" screenOptions={{"headerShown": false}}>
         <HomeModalStack.Screen name="Home" component={HomeNavigation} />
         <HomeModalStack.Screen
             name="AddVehicleModal"
@@ -27,7 +27,7 @@ const HomeModalNavigator = (props) => (
 
 const AppStackNavigator = ({ isSignedIn }) => (
     <Stack.Navigator
-        headerMode="none"
+        screenOptions={{"headerShown": false}}
         initialRouteName={isSignedIn ? 'Home' : 'SignIn'}
     >
         {isSignedIn ? (

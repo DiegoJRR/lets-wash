@@ -1,0 +1,135 @@
+{
+  "project_info": {
+    "project_number": "966047795631",
+    "firebase_url": "https://carwash-40bc9.firebaseio.com",
+    "project_id": "carwash-40bc9",
+    "storage_bucket": "carwash-40bc9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966047795631:android:fd6fe04bf35c26971c075a",
+        "android_client_info": {
+          "package_name": "com.carwashmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966047795631-ah9e0eqvujeibt82g1hc8bntsqroci1h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.carwashmobile",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "966047795631-8mlcmnv0gids7vn6d1eno2jfd9vp4c5f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBujs20wQVc83n8Jq3bjzN-tihbUOpr-mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966047795631-8mlcmnv0gids7vn6d1eno2jfd9vp4c5f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "966047795631-lr5c8nk75ffeo6kojb9abrpqe8i82gm9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.washit.carwash.mobile"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966047795631:android:c120194502aa68601c075a",
+        "android_client_info": {
+          "package_name": "com.washit.carwash.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966047795631-8mlcmnv0gids7vn6d1eno2jfd9vp4c5f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBujs20wQVc83n8Jq3bjzN-tihbUOpr-mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966047795631-8mlcmnv0gids7vn6d1eno2jfd9vp4c5f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "966047795631-lr5c8nk75ffeo6kojb9abrpqe8i82gm9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.washit.carwash.mobile"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966047795631:android:3d6d73198c3dcf941c075a",
+        "android_client_info": {
+          "package_name": "com.washit.carwash.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966047795631-8ncaallo730a8g6m24p77bkkmn8gmrnj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.washit.carwash.mobile",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "966047795631-8mlcmnv0gids7vn6d1eno2jfd9vp4c5f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBujs20wQVc83n8Jq3bjzN-tihbUOpr-mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966047795631-8mlcmnv0gids7vn6d1eno2jfd9vp4c5f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "966047795631-lr5c8nk75ffeo6kojb9abrpqe8i82gm9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.washit.carwash.mobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

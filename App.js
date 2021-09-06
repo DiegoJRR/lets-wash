@@ -16,21 +16,21 @@ import { useDispatch, useSelector, Provider } from "react-redux";
 import storage from "@react-native-firebase/storage";
 import firestore from "@react-native-firebase/firestore";
 import { PersistGate } from "redux-persist/integration/react";
-import { store, persistor } from "redux-config";
 
 import messaging from "@react-native-firebase/messaging";
 import { GoogleSignin } from "@react-native-community/google-signin";
+import { store, persistor } from "./redux-config";
 import {
     signIn,
     signOut,
     setServiceTypes,
     setVehicleTypes,
-    setUserData,
+    setUserData,  
     setUserRequests,
     setPendingReview,
     setVehicles,
 } from "./redux/actions";
-import { fillRequests } from "./handlers/requests";
+import fillRequests from "./handlers/requests";
 import AppStackNavigator from "./navigation/AppStackNavigator";
 import { navigationRef } from "./Navigation";
 import HandleNotifications from "./components/HandleNotifications/HandleNotifications";

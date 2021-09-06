@@ -51,7 +51,7 @@ const VehicleMenu = (props) => {
     );
 
     return (
-        <MyCarsStack.Navigator mode="modal" headerMode="none">
+        <MyCarsStack.Navigator mode="modal" screenOptions={{"headerShown": false}}>
             <MyCarsStack.Screen name="Mis Vehículos" component={menu} />
             <MyCarsStack.Screen name="EditCarModal" component={EditCarModal} />
         </MyCarsStack.Navigator>

@@ -17,16 +17,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.carwashmobile"  
     },
+    "plugins": [
+      "@react-native-firebase/app",
+      "@react-native-firebase/perf"
+    ],
     "web": {
       "favicon": "./assets/favicon.png"
     }
   }
 }
+

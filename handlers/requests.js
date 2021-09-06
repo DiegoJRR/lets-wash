@@ -17,7 +17,7 @@ const fillProfilePicutreUri = async (employee) => {
 
 const fillRequests = async (snapshot) => {
     const filtered = snapshot.docs.filter(
-        (doc) => doc.data().payment.status == 'approved' && doc.data().washer
+        (doc) => doc.data().payment.status === 'approved' && doc.data().washer
     );
 
     const requests = filtered.map((doc) => ({
